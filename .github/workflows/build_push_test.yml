@@ -1,8 +1,8 @@
 name: Build, Test, and Push Docker image to GHCR
 
 env:
-  IMAGE_NAME: reductdims
-  repo-name: yamaken37/reductdims
+  IMAGE_NAME: wormtensor
+  repo-name: yamaken37/wormtensor
 
 on:
   push:
