@@ -1,10 +1,5 @@
 # Base Image
-FROM bioconductor/bioconductor_docker:RELEASE_3_14
-
-# Download from GitHub
-ADD reductDims.R /
-ADD cmd_reductDims.R /
+FROM --platform=linux/amd64 bioconductor/bioconductor_docker:RELEASE_3_15
 
 # Install R Packages
-# RUN R -e 'install.packages(c("Rtsne", "irlba", "testthat", "uwot"), repos="http://cran.r-project.org")'
-RUN R -e 'BiocManager::install(c("Rtsne", "irlba", "testthat", "uwot"), update = FALSE, force = TRUE)'
+RUN R -e 'BiocManager::install(c("rTensor","usedist","dtwclust","clusterSim","clValid","aricode","cluster","ggplot2","Rtsne","uwot","factoextra","ggrepel","cowplot","methods","devtools"), update = FALSE, force = TRUE)'
