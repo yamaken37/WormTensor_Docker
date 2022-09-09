@@ -34,9 +34,6 @@ jobs:
       - name: Build
         run: docker build -t ${{ github.repository_owner }}/${{ env.IMAGE_NAME }} .
 
-      - name: Test
-        run: docker run --rm -v $(pwd):/work ${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest Rscript work/test.R
-
       - name: Tag (Latest)
         run: docker tag ${{ github.repository_owner }}/${{ env.IMAGE_NAME }} ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
 
